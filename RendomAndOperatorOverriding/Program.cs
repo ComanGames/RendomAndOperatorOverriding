@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace RendomAndOperatorOverriding
@@ -13,19 +15,61 @@ namespace RendomAndOperatorOverriding
         Minus,
         Multiply, 
         Divide
-    }
+    } 
     class Program
     {
         public static bool somebool;
         static void Main(string[] args)
         {
 //            FirstPartOfLessonRancomClass();
+//            SecondPartOfLesson();
+            string myString = "Hello";
+            int[] numbers = Enumerable.Range(0,11).ToArray();
+
+            string[] Students = new[] { "Chirva", "Bubna", "Pika", "Hresta" };
+            Console.WriteLine("Original Array of Students");
+            Students.ArrayToString();
+            Console.WriteLine("Shuffled Array Of Students");
+            Thread.Sleep(100);
+            Students.ShffleArray().ArrayToString();
+            Thread.Sleep(100);
+            Students.ShffleArray().ArrayToString();
+            Thread.Sleep(100);
+            Students.ShffleArray().ArrayToString();
+            Console.WriteLine();
+            Console.WriteLine("Original Array of numbers");
+            numbers.ArrayToString();
+            Console.WriteLine("Shuffled Array Of numbers");
+            Thread.Sleep(100);
+            numbers.ShffleArray().ArrayToString();
+            Thread.Sleep(100);
+            numbers.ShffleArray().ArrayToString();
+            Thread.Sleep(100);
+            numbers.ShffleArray().ArrayToString();
+            Console.ReadKey();
+            //WRITE RANDEM WITH SAME NUMBERS IN ARRAY
+            //ANOTHER ARRAY WITH CONST NUMBERS OF RETURNED ELEMENTS WITH REGULASHION OF REP AND NOT REP (TRUE/FALSE)
+        }
+        
+        private static string ArrayToString<T> ( T[] A)
+        {
+            string result = "{ ";
+            for (int i = 0; i < A.Length; i++)
+            {
+                result += $"{A.ToString()}, ";
+
+            }
+            result += "}";
+            return result;
+        }
+        private static void SecondPartOfLesson()
+        {
             Random random = new Random();
             string[] Students = new[] {"Chirva", "Bubna", "Pika", "Hresta"};
             bool[] WasInCharge = new bool[4];
             int countWhoWas = 0;
-            int randomFromArray ;
-            
+            int randomFromArray;
+
             while (true)
             {
                 do
@@ -46,10 +90,7 @@ namespace RendomAndOperatorOverriding
             }
         }
 
-        public static T ShffleArray<T>(T[] A)
-        {
-            
-        }
+       
         private static void FirstPartOfLessonRancomClass()
         {
             int[] numbers = Enumerable.Range(1, 10).ToArray();
