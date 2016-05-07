@@ -20,6 +20,11 @@ namespace RendomAndOperatorOverriding
         static void Main(string[] args)
         {
 //            FirstPartOfLessonRancomClass();
+            string word = "Hello";
+            word += " Hello";
+            Console.WriteLine(word);
+            Console.ReadKey();
+
             Random random = new Random();
             string[] Students = new[] {"Chirva", "Bubna", "Pika", "Hresta"};
             bool[] WasInCharge = new bool[4];
@@ -46,9 +51,12 @@ namespace RendomAndOperatorOverriding
             }
         }
 
-        public static T ShffleArray<T>(T[] A)
+        public static T[] ShffleArray<T>(T[] A)
         {
-            
+            T[] result = new T[A.Length];
+
+
+            return result;
         }
         private static void FirstPartOfLessonRancomClass()
         {
