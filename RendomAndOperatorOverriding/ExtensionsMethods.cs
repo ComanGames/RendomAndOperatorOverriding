@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace RendomAndOperatorOverriding
 {
@@ -16,6 +17,10 @@ namespace RendomAndOperatorOverriding
             return result;
         }
 
+        public static void Write(this string write)
+        {
+            Console.WriteLine(write);
+        }
 
         //Shuffled Array with the same values
         public static T[] ShffleArraySv<T>(this T[] A)
