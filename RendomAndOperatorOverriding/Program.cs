@@ -26,17 +26,20 @@ namespace RendomAndOperatorOverriding
             string myString = "Hello";
             int[] numbers = Enumerable.Range(0,11).ToArray();
 
-            string[] Students = new[] { "Chirva", "Bubna", "Pika", "Hresta" };
-            Console.WriteLine("Original Array of Students");
-            Students.ArrayToString();
-            Console.WriteLine("Shuffled Array Of Students");
-            Thread.Sleep(100);
-            Students.ShffleArray().ArrayToString();
-            Thread.Sleep(100);
-            Students.ShffleArray().ArrayToString();
-            Thread.Sleep(100);
-            Students.ShffleArray().ArrayToString();
-            Console.WriteLine();
+            /* string[] Students = new[] { "Chirva", "Bubna", "Pika", "Hresta" };
+             Console.WriteLine("Original Array of Students");
+             Students.ArrayToString();
+             Console.WriteLine("Shuffled Array Of Students");
+             Thread.Sleep(100);
+             Students.ShffleArray().ArrayToString();
+             Thread.Sleep(100);
+             Students.ShffleArray().ArrayToString();
+             Thread.Sleep(100);
+             Students.ShffleArray().ArrayToString();
+             Console.WriteLine();*/
+
+
+            /*//print arrays with all indifferent values of array
             Console.WriteLine("Original Array of numbers");
             numbers.ArrayToString();
             Console.WriteLine("Shuffled Array Of numbers");
@@ -46,9 +49,49 @@ namespace RendomAndOperatorOverriding
             numbers.ShffleArray().ArrayToString();
             Thread.Sleep(100);
             numbers.ShffleArray().ArrayToString();
-            Console.ReadKey();
-            //WRITE RANDEM WITH SAME NUMBERS IN ARRAY
+            Console.ReadKey();*/
+
+           /*//WRITE RANDEM WITH SAME NUMBERS IN ARRAY
+            //print arrays with same values of array
+            Console.WriteLine("Original Array of numbers");
+            numbers.ArrayToString();
+            Console.WriteLine("Shuffled Array with same vales Of numbers");
+            Thread.Sleep(100);
+            numbers.ShffleArraySv().ArrayToString();
+            Thread.Sleep(100);
+            numbers.ShffleArraySv().ArrayToString();
+            Thread.Sleep(100);
+            numbers.ShffleArraySv().ArrayToString();
+            Console.ReadKey();*/
+
+
+
             //ANOTHER ARRAY WITH CONST NUMBERS OF RETURNED ELEMENTS WITH REGULASHION OF REP AND NOT REP (TRUE/FALSE)
+            /*//print arrays with CN
+            Console.WriteLine("Original Array of numbers");
+            numbers.ArrayToString();
+            Console.WriteLine("Shuffled Array with same vales Of numbers");
+            Thread.Sleep(100);
+            numbers.ShffleArrayCn().ArrayToString();
+            Thread.Sleep(100);
+            numbers.ShffleArrayCn().ArrayToString();
+            Thread.Sleep(100);
+            numbers.ShffleArrayCn().ArrayToString();
+            Console.ReadKey();*/
+
+            //print arrays with CNr
+            Console.WriteLine("Original Array of numbers");
+            numbers.ArrayToString();
+            Console.WriteLine("Shuffled Array with same vales Of numbers");
+            Thread.Sleep(100);
+            numbers.ShffleArrayCnr().ArrayToString();
+            Thread.Sleep(100);
+            numbers.ShffleArrayCnr().ArrayToString();
+            Thread.Sleep(100);
+            numbers.ShffleArrayCnr().ArrayToString();
+            Console.ReadKey();
+
+
         }
         
         private static string ArrayToString<T> ( T[] A)
