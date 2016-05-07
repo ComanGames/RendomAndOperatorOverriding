@@ -83,28 +83,20 @@ namespace RendomAndOperatorOverriding
             Console.WriteLine("Original Array of numbers");
             numbers.ArrayToString();
             Console.WriteLine("Shuffled Array with same vales Of numbers");
-            Thread.Sleep(100);
             numbers.ShffleArrayCnr().ArrayToString();
-            Thread.Sleep(100);
+            numbers.ShffleArrayCnr(false).ArrayToString();
             numbers.ShffleArrayCnr().ArrayToString();
-            Thread.Sleep(100);
-            numbers.ShffleArrayCnr().ArrayToString();
+            //Console.WriteLine(numbers.ShffleArrayCnr().ArrayToString());
+            numbers.ShffleArrayCnr().ArrayToString().Write();
+            string s = "Hello";
+            s.Write();
+            "Yura".Write();
+            Console.WriteLine("I done");
+            ExtensionsMethods.ArrayToString(ExtensionsMethods.ShffleArrayCnr(numbers, false, 5));
             Console.ReadKey();
-
 
         }
         
-        private static string ArrayToString<T> ( T[] A)
-        {
-            string result = "{ ";
-            for (int i = 0; i < A.Length; i++)
-            {
-                result += $"{A.ToString()}, ";
-
-            }
-            result += "}";
-            return result;
-        }
         private static void SecondPartOfLesson()
         {
             Random random = new Random();

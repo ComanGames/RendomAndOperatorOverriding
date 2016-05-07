@@ -4,7 +4,7 @@ namespace RendomAndOperatorOverriding
 {
     public static class ExtensionsMethods
     {
-        public static void ArrayToString<T>(this T[] A)
+        public static string ArrayToString<T>(this T[] A)
         {
             string result = "{ ";
             for (int i = 0; i < A.Length; i++)
@@ -13,9 +13,9 @@ namespace RendomAndOperatorOverriding
 
             }
             result += "}";
-            Console.WriteLine(result);
-
+            return result;
         }
+
 
         //Shuffled Array with the same values
         public static T[] ShffleArraySv<T>(this T[] A)
@@ -42,7 +42,7 @@ namespace RendomAndOperatorOverriding
         {
             int randfromArray = 0;
             Random random = new Random();
-            int constnum = 7;
+            int constnum = 50;
             T[] result = new T[constnum];
             
             //bool[] ordered = new bool[A.Length];
@@ -60,11 +60,28 @@ namespace RendomAndOperatorOverriding
         }
 
         //Shuffled Array with constant numbers
-        public static T[] ShffleArrayCnr<T>(this T[] A)
+        // {0,1,2,3,4,5}
+        //ordered  new bool [6]
+        // 6
+        public static T[] ShffleArrayCnr<T>(this T[] A )
+        {
+            return ShffleArrayCnr(A,false);
+        }
+
+        public static T[] ShffleArrayCnr<T>(this T[] A, bool isRandom)
+        {
+            return ShffleArrayCnr(A, isRandom, A.Length);
+        }
+        public static T[] ShffleArrayCnr<T>(this T[] A, int length)
+        {
+            return ShffleArrayCnr(A, false, length);
+        }
+
+
+        public static T[] ShffleArrayCnr<T>(this T[] A,bool isRandom,int constnum)
         {
             int randfromArray = 0;
             Random random = new Random();
-            int constnum = 7;
             T[] result = new T[constnum];
 
             bool[] ordered = new bool[A.Length];
@@ -73,13 +90,12 @@ namespace RendomAndOperatorOverriding
             //for (int i = 0; i < result.Length; i++)
             for (int i = 0; i < constnum; i++)
             {
-               
                     do
                     {
                         randfromArray = random.Next(A.Length);
                     } while (ordered[randfromArray]);
                     ordered[randfromArray] = true;
-                    result[i] = A[randfromArray];
+                result[i] = A[randfromArray];
                 
             }
             return result;
@@ -109,9 +125,9 @@ namespace RendomAndOperatorOverriding
 
 
 
-       /* public static void YurasString(this string s)
+        public static void YurasString(this string s)
         {
             Console.WriteLine(s + " Yuras String");
-        }*/
+        }
     }
 }
