@@ -17,6 +17,7 @@ namespace RendomAndOperatorOverriding
             return result;
         }
 
+        //Write method
         public static void Write(this string write)
         {
             Console.WriteLine(write);
@@ -106,7 +107,6 @@ namespace RendomAndOperatorOverriding
             return result;
         }
 
-
         //Shuffled Array with all different values
         public static T[] ShffleArray<T>(this T[] A)
         {
@@ -127,12 +127,20 @@ namespace RendomAndOperatorOverriding
             return result;
         }
 
-
-
-
         public static void YurasString(this string s)
         {
             Console.WriteLine(s + " Yuras String");
         }
+
+        //one random element from existing Array
+
+        /*public static int[]
+        {
+            Random random = new Random();
+            numbers[] result = numbers[new Random().Next(0,A.Length]);
+            //bool[] ordered = new bool[A.Length];
+            return result;
+        }*/
+
     }
 }

@@ -19,12 +19,79 @@ namespace RendomAndOperatorOverriding
     class Program
     {
         public static bool somebool;
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
 //            FirstPartOfLessonRancomClass();
 //            SecondPartOfLesson();
-            string myString = "Hello";
-            int[] numbers = Enumerable.Range(0,11).ToArray();
+            //string myString = "Hello";
+
+            /*Array from..to*/
+            int[] numbers = Enumerable.Range(3,15).ToArray();
+            /*Printing Original Array*/
+            Console.WriteLine("Original Array of numbers");
+            numbers.ArrayToString().Write();
+
+            /*Chose one ramdom number from existing array*/
+           // Console.WriteLine($"second number from Array, {numbers[2]}");
+            Console.WriteLine();
+
+            /*Random number from Array*/
+            int FirstElem = numbers[new Random().Next(0, numbers.Length)];
+            Thread.Sleep(100); //pause between randomize
+            int SecondElem = numbers[new Random().Next(0, numbers.Length)];
+
+            int Summ = FirstElem + SecondElem;
+
+
+
+            
+            Console.WriteLine(FirstElem.ToString() + "+" + SecondElem.ToString() + "=" + Summ);
+            string res = Console.ReadLine();
+            int resC;
+            bool resL = Int32.TryParse(res, out resC);
+
+            if (resL)
+            {
+                if (resC == Summ)
+                {
+                    Console.WriteLine("Correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect answer");
+                }
+                
+            }
+            else
+            {
+                Console.WriteLine("Your input " + res + " is incorrect. Try again");
+            }
+
+
+            Console.WriteLine("Correct solution is " + FirstElem.ToString() + "+" + SecondElem.ToString() + "=" + Summ);
+            Console.WriteLine();
+  
+
+
+
+            /* Console.WriteLine("Shuffled Array with same vales Of numbers");
+             numbers.ShffleArrayCnr().ArrayToString();
+             numbers.ShffleArrayCnr(false).ArrayToString();
+             numbers.ShffleArrayCnr().ArrayToString();
+             //Console.WriteLine(numbers.ShffleArrayCnr().ArrayToString());
+             numbers.ShffleArrayCnr().ArrayToString().Write();
+             //string s = "Hello";
+             //s.Write();
+             //"Yura".Write();*/
+            Console.WriteLine("I done");
+            //ExtensionsMethods.ArrayToString(ExtensionsMethods.ShffleArrayCnr(numbers, false, 5));
+            Console.ReadKey();
+
+
+
+
+
+
 
             /* string[] Students = new[] { "Chirva", "Bubna", "Pika", "Hresta" };
              Console.WriteLine("Original Array of Students");
@@ -51,18 +118,18 @@ namespace RendomAndOperatorOverriding
             numbers.ShffleArray().ArrayToString();
             Console.ReadKey();*/
 
-           /*//WRITE RANDEM WITH SAME NUMBERS IN ARRAY
-            //print arrays with same values of array
-            Console.WriteLine("Original Array of numbers");
-            numbers.ArrayToString();
-            Console.WriteLine("Shuffled Array with same vales Of numbers");
-            Thread.Sleep(100);
-            numbers.ShffleArraySv().ArrayToString();
-            Thread.Sleep(100);
-            numbers.ShffleArraySv().ArrayToString();
-            Thread.Sleep(100);
-            numbers.ShffleArraySv().ArrayToString();
-            Console.ReadKey();*/
+            /*//WRITE RANDEM WITH SAME NUMBERS IN ARRAY
+             //print arrays with same values of array
+             Console.WriteLine("Original Array of numbers");
+             numbers.ArrayToString();
+             Console.WriteLine("Shuffled Array with same vales Of numbers");
+             Thread.Sleep(100);
+             numbers.ShffleArraySv().ArrayToString();
+             Thread.Sleep(100);
+             numbers.ShffleArraySv().ArrayToString();
+             Thread.Sleep(100);
+             numbers.ShffleArraySv().ArrayToString();
+             Console.ReadKey();*/
 
 
 
@@ -80,24 +147,10 @@ namespace RendomAndOperatorOverriding
             Console.ReadKey();*/
 
             //print arrays with CNr
-            Console.WriteLine("Original Array of numbers");
-            numbers.ArrayToString();
-            Console.WriteLine("Shuffled Array with same vales Of numbers");
-            numbers.ShffleArrayCnr().ArrayToString();
-            numbers.ShffleArrayCnr(false).ArrayToString();
-            numbers.ShffleArrayCnr().ArrayToString();
-            //Console.WriteLine(numbers.ShffleArrayCnr().ArrayToString());
-            numbers.ShffleArrayCnr().ArrayToString().Write();
-            string s = "Hello";
-            s.Write();
-            "Yura".Write();
-            Console.WriteLine("I done");
-            ExtensionsMethods.ArrayToString(ExtensionsMethods.ShffleArrayCnr(numbers, false, 5));
-            Console.ReadKey();
 
         }
         
-        private static void SecondPartOfLesson()
+       /* private static void SecondPartOfLesson()
         {
             Random random = new Random();
             string[] Students = new[] {"Chirva", "Bubna", "Pika", "Hresta"};
@@ -142,6 +195,6 @@ namespace RendomAndOperatorOverriding
                 }
                 Console.ReadKey();
             }
-        }
+        }*/
     }
 }
